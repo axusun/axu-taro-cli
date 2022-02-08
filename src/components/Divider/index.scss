@@ -1,0 +1,15 @@
+.divider {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  align-items: center;
+
+  &-line {
+    flex: auto;
+    background-color: $hezi-gray-border;
+    height: 1Px;
+  }
+  &-text {
+    flex: none;
+  }
+}

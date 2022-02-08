@@ -1,0 +1,32 @@
+.home {
+  &-head {
+    width: 100%;
+    height: 200px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  &-entry {
+    width: 332px;
+    height: 332px;
+    &.back_img1 {
+      background-image: url('https://baiyin-produce.oss-cn-hangzhou.aliyuncs.com/mini-view-nc-wms/image/img_1%402x.png?x-oss-process=image/resize,w_332,m_lfit');
+      background-size: 332px 332px;
+      background-repeat: no-repeat;
+    }
+    &.back_img2 {
+      background-image: url('https://baiyin-produce.oss-cn-hangzhou.aliyuncs.com/mini-view-nc-wms/image/img_2%402x.png?x-oss-process=image/resize,w_332,m_lfit');
+      background-size: 332px 332px;
+      background-repeat: no-repeat;
+    }
+    &.back_img3 {
+      background-image: url('https://baiyin-produce.oss-cn-hangzhou.aliyuncs.com/mini-view-nc-wms/image/img_3%402x.png?x-oss-process=image/resize,w_332,m_lfit');
+      background-size: 332px 332px;
+      background-repeat: no-repeat;
+    }
+    &.back_img4 {
+      background-image: url('https://baiyin-produce.oss-cn-hangzhou.aliyuncs.com/mini-view-nc-wms/image/img_4%402x.png?x-oss-process=image/resize,w_332,m_lfit');
+      background-size: 332px 332px;
+      background-repeat: no-repeat;
+    }
+  }
+}

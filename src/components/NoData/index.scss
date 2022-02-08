@@ -1,0 +1,25 @@
+.By-no-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  .By-no-data-item {
+    margin-top: -140px;
+    width: 100%;
+  }
+  &__Img {
+    width: 232px;
+    height: 232px;
+  }
+  &__operator {
+    margin-top: 52px;
+  }
+  &__btn {
+    width: 360px;
+  }
+  .By-no-data__btn {
+    border-radius: 42px;
+  }
+}

@@ -1,0 +1,115 @@
+// 变量
+// 主题色
+$hezi-color-primary: #3072f5;
+$hezi-color-primary-100: #fff2f1;
+$hezi-color-primary-200: #ffccc8;
+$hezi-color-primary-300: #ff7775;
+$hezi-color-primary-400: $hezi-color-primary;
+$hezi-color-primary-500: #ff526c;
+$hezi-color-primary-600: #d01121;
+$hezi-color-primary-700: #a8051a;
+$hezi-color-primary-800: #810114;
+$hezi-color-primary-900: #0e2552;
+
+$hezi-color-secondary: #cc9756;
+$hezi-color-secondary-light: #ffdeac;
+$hezi-color-secondary-dark: #b5854b;
+
+$hezi-color-secondary-100: #fee3c9;
+$hezi-color-secondary-200: #ffdeac;
+$hezi-color-secondary-300: #ffd4a9;
+$hezi-color-secondary-400: #f0cda1;
+$hezi-color-secondary-500: #efb66f;
+$hezi-color-secondary-600: #cc9756;
+
+$hezi-color-warning: #ff526c;
+$hezi-color-success: #29cf7b;
+
+$hezi-color-customMade: #778c5d;
+
+// 文字色
+$hezi-text-color: #333;
+$hezi-text-color-light: #a5a5a5;
+$hezi-text-color-gray: #cdcdcd;
+$hezi-text-color-dark-gray: #666;
+$hezi-text-color-member: #ffead0;
+
+// 灰色系
+$hezi-gray-mask: rgba(2, 1, 1, 0.5);
+// $hezi-gray-line:#4a4a4a;
+$hezi-gray-icon: #cdcdcd;
+$hezi-gray-border: #eee;
+
+// 背景色
+$hezi-background-white: #fff;
+$hezi-background-gray: #eeeef1;
+
+// 间距
+// $hezi-space-xs:16px;
+// $hezi-space-md:24px;
+// $hezi-space-lg:32px;
+
+//  处理ios底部安全区域
+@mixin x-padding-bottom($val: 1px) {
+  padding-bottom: $val;
+  padding-bottom: calc(#{$val} + constant(safe-area-inset-bottom));
+  /* ios 11 */
+  padding-bottom: calc(#{$val} + env(safe-area-inset-bottom));
+  /* ios 11.2及以后 */
+}
+@mixin x-margin-bottom() {
+  // margin-bottom: $val;
+  // margin-bottom: calc(#{$val} + constant(safe-area-inset-bottom));
+  /* ios 11 */
+  // margin-bottom: calc(#{$val} + env(safe-area-inset-bottom));
+  /* ios 11.2及以后 */
+  margin-bottom: constant(safe-area-inset-bottom);
+  margin-bottom: env(safe-area-inset-bottom);
+}
+
+@mixin ws {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin m-arrow($direction: "top", $line-color: #999, $width: 1px) {
+  $angle: 45deg;
+  border: $width solid transparent;
+  @if (arrowDirection($direction)) {
+    border-top-color: $line-color;
+    @if ($direction == "top") {
+      $angle: -45deg;
+    }
+  } @else {
+    border-bottom-color: $line-color;
+    @if ($direction == "left") {
+      $angle: 135deg;
+    }
+  }
+  border-right-color: $line-color;
+  transform: rotate($angle);
+}
+%hairline-common {
+  content: " ";
+  position: absolute;
+  pointer-events: none;
+  box-sizing: border-box;
+
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  transform: scale(0.5);
+  border-style: solid;
+  border-width: 0;
+}
+@mixin border-surround($color: $border-color, $radius: 0) {
+  &::after {
+    @extend %hairline-common;
+    /* prettier-ignore */
+    border-width: 1PX;
+    border-color: $color;
+    border-radius: $radius;
+  }
+}
